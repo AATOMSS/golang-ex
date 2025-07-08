@@ -1,0 +1,13 @@
+name: TestDeploy
+on: 
+  push: 
+    branches: [ develop, qa, main ] # develop
+env:
+  TEST_ENV_VAR: ${{ env.TEST_ENV}}
+
+jobs:
+  Deploy-environment-naira:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Say Hello Env variables"
+        run: echo "Value of variables is $TEST_ENV_VAR"
