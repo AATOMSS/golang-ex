@@ -3,7 +3,7 @@ on:
   push: 
     branches: [ main, qa, develop]
 env: 
-  URL_VAL: ${{ vars.ENV_TEST }}
+  URL_VAL: '${{ vars.ENV_TEST }}'
 jobs:
   Deploy-environment-test:
     runs-on: ubuntu-latest
