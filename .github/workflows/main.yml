@@ -3,13 +3,13 @@ on:
   push: 
     branches: [ main, qa, develop]
 env: 
-  env_var: ${{ inputs.environment }}
+  env_var: ${{ secrets.URL }}
 jobs:
   Deploy-environment-test:
     runs-on: ubuntu-latest
     steps:
       - name: "Say Hello Env variables"
         run: |
-         echo "Value of variables is ${{ vars.TEST_ENV }} ..."
+         echo "Value of variables is ${{ vars.URL }} ..."
          echo "      of variables is ${{ inputs.environment }} ..."
          echo "second of variables is $env_var ..."
