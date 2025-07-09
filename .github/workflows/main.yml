@@ -1,9 +1,7 @@
 name: TestDeploy25
 on: 
   push: 
-    branches:
-             -main
-             -qa
+    branches: [ main, qa]
 
 jobs:
   Deploy-environment-test:
