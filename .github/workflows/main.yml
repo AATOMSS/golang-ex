@@ -4,10 +4,13 @@ on:
     branches: [ develop, qa, main ] # develop
 env:
   TEST_ENV_VAR: ${{ vars.TEST_ENV }}
+  TEST_VAR2: IN_ACTION
   
 jobs:
   Deploy-environment-test:
     runs-on: ubuntu-latest
     steps:
       - name: "Say Hello Env variables"
-        run: echo "Value of variables is ${{ env.TEST_ENV_VAR }}"
+        run: |
+         echo "Value of variables is ${{ env.TEST_ENV_VAR }}"
+         echo "second of variables is ${{ env.TEST_VAR2 }}"
