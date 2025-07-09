@@ -9,7 +9,7 @@ jobs:
   Deploy-environment-test:
     runs-on: ubuntu-latest
     env:
-     JOB_VARIABLE: ${{ VARS.TEST_ENV }}
+     JOB_VARIABLE: MAT1
     steps:
       - name: "Say Hello Env variables"
         run: |
