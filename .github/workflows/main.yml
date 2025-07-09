@@ -1,7 +1,9 @@
 name: TestDeploy25
 on: 
   push: 
-    branches: [ main, qa]
+    branches: [ main, qa, develop]
+env:
+ env_var: ${{ VAR.TEST_ENV }}
 
 jobs:
   Deploy-environment-test:
@@ -9,6 +11,6 @@ jobs:
     steps:
       - name: "Say Hello Env variables"
         run: |
-         echo "Value of variables is ${{ vars.TEST_ENV }}"
-         echo "      of variables is ${{ env.TEST_REP_VAR }}"
-         echo "second of variables is ${{ env.TEST_VAR2 }}"
+         echo "Value of variables is $env_var ..."
+         echo "      of variables is ${{ env.TEST_REP_VAR }} ..."
+         echo "second of variables is ${{ env.TEST_VAR2 }} ..."
