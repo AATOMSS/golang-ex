@@ -11,5 +11,5 @@ jobs:
       - name: "Say Hello Env variables"
         run: |
          echo "Value of variables is ${{ env.URL_VAL }} ..."
-         echo "      of variables is $URL_VAL ..."
+         echo "      of variables is $GITHUB_ENV ..."
          echo "second of variables is  ${{ secrets.URL }} ..."
