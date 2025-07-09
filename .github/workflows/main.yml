@@ -3,7 +3,7 @@ on:
   push: 
     branches: [ main, qa, develop]
 env: 
-  URL_VAL: ${{ secrets.URL }}
+  URL_VAL: '${{ vars.TEST_ENV }}'
 jobs:
   Deploy-environment-test:
     runs-on: ubuntu-latest
@@ -11,5 +11,5 @@ jobs:
       - name: "Say Hello Env variables"
         run: |
          echo "Value of variables is ${{ env.URL_VAL }} ..."
-         echo "      of variables is $GITHUB_ENV ..."
+         echo "      of variables is $URL_VAL ..."
          echo "second of variables is  ${{ secrets.URL }} ..."
