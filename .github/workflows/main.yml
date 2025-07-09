@@ -3,16 +3,14 @@ on:
   push: 
     branches: [ main, qa, develop]
 env:
- env_var: ${{ vars.ENV_CONTEXT_VAR }}
+ environment: ${{ inputs.environment }}
  
 jobs:
   Deploy-environment-test:
     runs-on: ubuntu-latest
-    env:
-     JOB_VARIABLE: MAT1
     steps:
       - name: "Say Hello Env variables"
         run: |
-         echo "Value of variables is $env_var ..."
+         echo "Value of variables is ${{ vars.TEST_ENV }} ..."
          echo "      of variables is ${{ env.JOB_VARIABLE }} ..."
          echo "second of variables is ${{ env.TEST_VAR2 }} ..."
