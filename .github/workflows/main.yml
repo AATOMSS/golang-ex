@@ -1,11 +1,10 @@
 name: TestDeploy
 on: 
   push: 
-    branches: [ develop, qa, main ] # develop
-env:
-  env_var: ${{ vars.TEST_REP_VAR }}
-  TEST_VAR2: IN ACTION
-  
+    branches:
+             -main
+             -qa
+             -develop
 jobs:
   Deploy-environment-test:
     runs-on: ubuntu-latest
