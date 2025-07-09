@@ -3,7 +3,7 @@ on:
   push: 
     branches: [ main, qa, develop]
 env:
- env_var: ${{ VARS.TEST_ENV }}
+ env_var: ${{ vars.ENV_CONTEXT_VAR }}
  
 jobs:
   Deploy-environment-test:
@@ -13,6 +13,6 @@ jobs:
     steps:
       - name: "Say Hello Env variables"
         run: |
-         echo "Value of variables is $JOB_VARIABLE ..."
+         echo "Value of variables is $env_var ..."
          echo "      of variables is ${{ env.JOB_VARIABLE }} ..."
          echo "second of variables is ${{ env.TEST_VAR2 }} ..."
