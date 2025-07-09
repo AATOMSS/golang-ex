@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Say Hello Env variables"
-        run: echo "Value of variables is $TEST_ENV_VAR"
+        run: echo "Value of variables is ${{ env.TEST_ENV_VAR }}"
