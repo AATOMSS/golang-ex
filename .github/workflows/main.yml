@@ -3,7 +3,7 @@ on:
   push: 
     branches: [ main, qa, develop]
 env:
- env_var: ${{ VAR.TEST_ENV }}
+ env_var: ${{ VARS.TEST_ENV }}
 
 jobs:
   Deploy-environment-test:
