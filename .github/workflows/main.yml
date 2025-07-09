@@ -12,5 +12,5 @@ jobs:
     steps:
       - name: "Say Hello Env variables"
         run: |
-         echo "Value of variables is ${{ env.TEST_ENV_VAR }}"
+         echo "Value of variables is ${{ vars.TEST_ENV }}"
          echo "second of variables is ${{ env.TEST_VAR2 }}"
