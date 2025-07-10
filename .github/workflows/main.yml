@@ -2,14 +2,10 @@ name: TestDeploy25
 on: 
   push: 
     branches: [ main, qa, develop]
-env:
-  environment: ${{ inputs.environment }}
-  URL_VAL: ${{ vars.MY_VAR }}
-  #TEST: ${{ env.ENV_TEST }}
 jobs:
   Deploy-environment-test:
     runs-on: ubuntu-latest
-    environment: ${{ inputs.environment }}
+    environment: main
     steps:
       - name: "Say Hello Env variables"
         run: |
