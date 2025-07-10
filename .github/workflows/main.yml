@@ -2,7 +2,8 @@ name: TestDeploy25
 on: 
   push: 
     branches: [ main, qa, develop]
-env: 
+env:
+  environment: ${{ inputs.environment }}
   URL_VAL: ${{ vars.MY_VAR }}
   #TEST: ${{ env.ENV_TEST }}
 jobs:
