@@ -4,6 +4,7 @@ on:
     branches: [ main, qa, develop]
 env:
  GET_ENV: ${{ github.ref }}
+ URL: ${{ vars.MY_VAR }} 
 
 jobs:
   Deploy-environment-test:
@@ -15,3 +16,4 @@ jobs:
          echo "Value of variables is ${{ env.GET_ENV }} ..."
          echo "      of variables is  ${{ vars.MY_VAR }} ..."
          echo "second of variables is  $TEST ..."
+         echo "theerth of var is  ${{ env.URL }} ..."
