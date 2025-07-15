@@ -1,17 +1,19 @@
-name: TestDeploy
+name: TestDeploy25
 on: 
   push: 
-    branches: [ develop, qa, main ] # develop
+    branches: [ main, qa, develop]
 env:
-  env_var: ${{ vars.TEST_REP_VAR }}
-  TEST_VAR2: IN ACTION
-  
+ GET_ENV: ${{ github.ref }}
+ URL: ${{ vars.MY_VAR }} 
+
 jobs:
   Deploy-environment-test:
     runs-on: ubuntu-latest
+    environment: ${{ github.ref }}
     steps:
       - name: "Say Hello Env variables"
         run: |
-         echo "Value of variables is ${{ vars.TEST_ENV }}"
-         echo "      of variables is ${{ env.TEST_REP_VAR }}"
-         echo "second of variables is ${{ env.TEST_VAR2 }}"
+         echo "Value of variables is ${{ env.GET_ENV }} ..."
+         echo "      of variables is  ${{ vars.MY_VAR }} ..."
+         echo "second of variables is  $TEST ..."
+         echo "theerth of var is  ${{ env.URL }} ..."
