@@ -4,12 +4,13 @@ on:
     branches: [ main, qa, develop]
 env:
  GET_ENV: ${{ github.ref }}
- URL: ${{ vars.MY_VAR }} 
+ URL: ${{ vars.MY_VAR }}
+ DEPLOY: ${{ vars.DEPLOY_ENV }}
 
 jobs:
   Deploy-environment-test:
     runs-on: ubuntu-latest
-    environment: ${{ vars.DEPLOY_ENV }}
+    environment: $DEPLOY
     steps:
       - name: "Say Hello Env variables"
         run: |
