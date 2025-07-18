@@ -10,7 +10,7 @@ env:
 jobs:
   Deploy-environment-test:
     runs-on: ubuntu-latest
-    environment: $DEPLOY
+    environment: ${{ env.DEPLOY }}
     steps:
       - name: "Say Hello Env variables"
         run: |
