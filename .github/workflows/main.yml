@@ -9,7 +9,7 @@ env:
 jobs:
   Deploy-environment-test:
     runs-on: ubuntu-latest
-    environment: ${{ github.ref }}
+    environment: ${{ vars.DEPLOY_ENV }}
     steps:
       - name: "Say Hello Env variables"
         run: |
