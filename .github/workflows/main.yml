@@ -5,12 +5,12 @@ on:
 env:
  GET_ENV: ${{ github.ref }}
  URL: ${{ vars.MY_VAR }}
- DEPLOY: ${{ vars.DEPLOY_ENV }}
+ DEPLOY: ${{ secrets.DPLY }}
 
 jobs:
   Deploy-environment-test:
     runs-on: ubuntu-latest
-    environment: ${{ env.GET_ENV }}
+    environment: ${{ secrets.DPLY }}
     steps:
       - name: "Say Hello Env variables"
         run: |
